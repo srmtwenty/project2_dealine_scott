@@ -47,8 +47,8 @@ function EditArmor() {
 
 function Update(e){
     e.preventDefault();
-    axios.put(`http://localhost:8082/armors/update/${id}`, data)
-    .then(navigate('/'))
+    axios.patch(`http://localhost:8082/armors/update/${id}`, data)
+    .then(navigate('/armors'))
 }
 
  

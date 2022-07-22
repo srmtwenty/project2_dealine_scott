@@ -58,8 +58,8 @@ function EditEnemy() {
 
 function Update(e){
     e.preventDefault();
-    axios.put(`http://localhost:8082/enemies/update/${id}`, data)
-    .then(navigate('/'))
+    axios.patch(`http://localhost:8082/enemies/update/${id}`, data)
+    .then(navigate('/enemies'))
 }
 
  
