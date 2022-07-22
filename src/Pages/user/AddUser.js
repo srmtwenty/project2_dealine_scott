@@ -57,7 +57,7 @@ function AddUser() {
     <div className="w-screen h-full   flex flex-col justify-center items-center mt-16">
 
     
-<h1 className='text-blue-500 text-3xl font-semibold flex '>Add User </h1>
+<h1 className='text-blue-500 text-3xl font-semibold flex '>Add Hero </h1>
         <form className="'w-[80%] h-full  justify-center items-center mt-4 ml-12"  >
             
         
@@ -65,13 +65,13 @@ function AddUser() {
 
             <input value={lastName}   onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Enter Last Name" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
 
-            <input value={username}  onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Enter username" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
+            <input value={username}  onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Enter Hero name" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
 
             <input value={email}  onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Enter password" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
 
             <input value={password}  onChange={(e) => setPassword(e.target.value)} type="email" placeholder="Enter email" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
 
-            <input value={role}  onChange={(e) => setRole(e.target.value)} type="text" placeholder="Enter role (ADMIN or PLAYER)" className='w-[80%] bg-white- 10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
+            <input value={role}  onChange={(e) => setRole(e.target.value)} type="text" placeholder="Enter role (GOOD or BAD)" className='w-[80%] bg-white- 10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
 
             
         </form>

@@ -87,8 +87,9 @@ function ItemsPage() {
               </td>
               
               <td className=" flex space-x-4  whitespace-nowrap justify-center items-center mt-1">
-                <Link to={`/users/${data.id}`} className='px-6 py-2 text-white bg-black rounded-lg font-semibold'>View</Link>
-                <Link to={`/users/update/${data.id}`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'>Edit </Link>
+                <Link to={`/items/${data.id}`} className='px-6 py-2 text-white bg-black rounded-lg font-semibold'>View</Link>
+                <Link to={`/items/update/${data.id}`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'>Edit </Link>
+                <Link to={`/items/add`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'> Add Items</Link>
                 <button onClick={()=>Delete(
                     data.id
                 )} className='px-6 py-2 text-white bg-red-600 rounded-lg font-semibold'>Delete</button>

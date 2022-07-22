@@ -16,22 +16,22 @@ function AddWeapon() {
 
     const data = {
         name: name,
-        defense: defense,
+        power: power,
         price: price,
         description: description
     }
      
     function Submit(e){
         e.preventDefault();
-        axios.post(`http://localhost:8082/armors/add`, {
+        axios.post(`http://localhost:8082/weapons/add`, {
             name: name,
-            defense: defense,
+            power: power,
             price: price,
             description: description
         })
         .then(res => {
             console.log(res)
-            navigate('/armors')
+            navigate('/weapons')
         }
         )
         .catch(err => {
@@ -48,13 +48,13 @@ function AddWeapon() {
     <div className="w-screen h-full   flex flex-col justify-center items-center mt-16">
 
     
-<h1 className='text-blue-500 text-3xl font-semibold flex '>Add Armor </h1>
+<h1 className='text-blue-500 text-3xl font-semibold flex '>Add Weapon </h1>
         <form className="'w-[80%] h-full  justify-center items-center mt-4 ml-12"  >
             
         
             <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Name" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
 
-            <input value={defense}   onChange={(e) => setDefense(e.target.value)} type="number" placeholder="Enter Defense" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
+            <input value={power}   onChange={(e) => setPower(e.target.value)} type="number" placeholder="Enter Power" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
 
             <input value={price}  onChange={(e) => setPrice(e.target.value)} type="number" placeholder="Enter Number" className='w-[80%] bg-white/10 text-xl  font-normal py-6 pl-6  outline-none border border-zinc-400  mt-4' />
 

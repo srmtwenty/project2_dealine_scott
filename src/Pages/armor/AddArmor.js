@@ -40,9 +40,6 @@ function AddArmor() {
         )
     }
 
-        
-
-
 
   return (
     <div className="w-screen h-full   flex flex-col justify-center items-center mt-16">

@@ -46,7 +46,7 @@ function UsersPage() {
 
         <div className="w-full h-full flex-col flex min-h-[50vh] justify-center items-center ">
 
-        <h1  className='text-black text-3xl font-semibold mt-16'> Users page </h1>
+        <h1  className='text-black text-3xl font-semibold mt-16'> Heroes page </h1>
 
         <table className="w-[80%] text-center overflow-hidden overflow-y-scroll mt-8 border border-black">
           <thead className="border-b bg-gray-800">
@@ -64,7 +64,7 @@ function UsersPage() {
                 Email
               </th>
               <th scope="col" className="text-lg font-medium text-white px-6 py-4">
-                Username
+                Heroname
               </th>
               <th scope="col" className="text-lg font-medium text-white px-6 py-4">
                 Password
@@ -105,6 +105,7 @@ function UsersPage() {
               <td className=" flex space-x-4  whitespace-nowrap justify-center items-center mt-1">
                 <Link to={`/users/${data.userId}`} className='px-6 py-2 text-white bg-black rounded-lg font-semibold'>View</Link>
                 <Link to={`/users/update/${data.userId}`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'>Edit </Link>
+                <Link to={`/users/add`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'> Add Heroes</Link>
                 <button onClick={()=>Delete(
                     data.userId
                 )} className='px-6 py-2 text-white bg-red-600 rounded-lg font-semibold'>Delete</button>

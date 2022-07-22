@@ -3,15 +3,15 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 
 
-function ArmorsPage() {
+function EnemiesPage() {
 
-    const [armors, setArmors] = useState([]);
+    const [enemies, setEnemies] = useState([]);
 
-    const loadArmors = ()=>{
-        axios.get('http://localhost:8082/armors')
+    const loadEnemies = ()=>{
+        axios.get('http://localhost:8082/enemies')
             .then(res => {
-                setArmors(res.data); 
-                console.log(armors)
+                setEnemies(res.data); 
+                console.log(enemies)
             })
             .catch(err => {
                 console.log(err)
@@ -20,14 +20,14 @@ function ArmorsPage() {
 
     useEffect(() => {
 
-        loadArmors();
+        loadEnemies();
        
     }, [])
 
     function Delete(id){
-        axios.delete(`http://localhost:8082/armors/${id}`)
+        axios.delete(`http://localhost:8082/enemies/${id}`)
             .then(res => {
-                loadArmors();
+                loadEnemies();
             }
             )
             .catch(err => {
@@ -46,7 +46,7 @@ function ArmorsPage() {
 
         <div className="w-full h-full flex-col flex min-h-[50vh] justify-center items-center ">
 
-        <h1  className='text-black text-3xl font-semibold mt-16'> Armor page </h1>
+        <h1  className='text-black text-3xl font-semibold mt-16'> Enemy page </h1>
 
         <table className="w-[80%] text-center overflow-hidden overflow-y-scroll mt-8 border border-black">
           <thead className="border-b bg-gray-800">
@@ -57,24 +57,39 @@ function ArmorsPage() {
               <th scope="col" className="text-lg font-medium text-white px-6 py-4">
                 Name
               </th>
-              
+              <th scope="col" className="text-lg font-medium text-white px-6 py-4">
+                Health
+              </th>
+              <th scope="col" className="text-lg font-medium text-white px-6 py-4">
+                Power
+              </th>
+              <th scope="col" className="text-lg font-medium text-white px-6 py-4">
+                Special Power
+              </th>
               <th scope="col" className="text-lg font-medium text-white px-6 py-4">
                 Defense
               </th>
+              
               <th scope="col" className="text-lg font-medium text-white px-6 py-4">
-                Price
-              </th> 
+                Special Defense
+              </th>
+              
               <th scope="col" className="text-lg font-medium text-white px-6 py-4">
                 Description
               </th>
+              
+              <th scope="col" className="text-lg font-medium text-white px-6 py-4">
+                Gold
+              </th> 
+              
               <th scope="col" className="text-lg font-medium text-white px-6 py-4">
                 Action
               </th>
             </tr>
           </thead >
-         {console.log(armors)} 
+         {console.log(enemies)} 
           <tbody>
-          {armors.map((data, index) => (
+          {enemies.map((data, index) => (
             <tr key={index} className="bg-white border-b">
               <td className="px-6 py-4 whitespace-nowrap text-lg font-medium text-gray-900">
                 {data.id}
@@ -83,19 +98,33 @@ function ArmorsPage() {
               {data.name}
               </td>
               <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              {data.health}
+              </td>
+              <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              {data.power}
+              </td>
+              <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              {data.specialPower}
+              </td>
+              <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
               {data.defense}
               </td>
               <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              {data.price}
+              {data.specialDefense}
               </td>
+              
               <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
               {data.description}
               </td>
               
+              <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              {data.gold}
+              </td>
+
               <td className=" flex space-x-4  whitespace-nowrap justify-center items-center mt-1">
-                <Link to={`/armors/${data.id}`} className='px-6 py-2 text-white bg-black rounded-lg font-semibold'>View</Link>
-                <Link to={`/armors/update/${data.id}`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'>Edit </Link>
-                <Link to={`/armors/add`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'> Add Armors</Link>
+                <Link to={`/enemies/${data.id}`} className='px-6 py-2 text-white bg-black rounded-lg font-semibold'>View</Link>
+                <Link to={`/enemies/update/${data.id}`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'>Edit </Link>
+                <Link to={`/enemies/add`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'> Add Items</Link>
                 <button onClick={()=>Delete(
                     data.id
                 )} className='px-6 py-2 text-white bg-red-600 rounded-lg font-semibold'>Delete</button>
@@ -112,4 +141,4 @@ function ArmorsPage() {
     </div>
     )}
 
-export default ArmorsPage
+export default EnemiesPage

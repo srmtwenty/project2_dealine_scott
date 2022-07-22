@@ -93,8 +93,9 @@ function WeaponsPage() {
               </td>
               
               <td className=" flex space-x-4  whitespace-nowrap justify-center items-center mt-1">
-                <Link to={`/users/${data.id}`} className='px-6 py-2 text-white bg-black rounded-lg font-semibold'>View</Link>
-                <Link to={`/users/update/${data.id}`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'>Edit </Link>
+                <Link to={`/weapons/${data.id}`} className='px-6 py-2 text-white bg-black rounded-lg font-semibold'>View</Link>
+                <Link to={`/weapons/update/${data.id}`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'>Edit </Link>
+                <Link to={`/weapons/add`} className='px-6 py-2 text-white bg-blue-600 rounded-lg font-semibold'> Add Weapons</Link>
                 <button onClick={()=>Delete(
                     data.id
                 )} className='px-6 py-2 text-white bg-red-600 rounded-lg font-semibold'>Delete</button>

@@ -41,10 +41,10 @@ function Weapon() {
 </div>
 
 <div className = 'w-7/12 flex flex-col space-y-4'>
-    <h2 className = 'text-black font semibold font-Inter text-2xl border-b border-black'>{armor.name}</h2>
-    <h2 className = 'text-black font semibold font-Inter text-2xl border-b border-black'>{armor.power}</h2>
-    <h2 className = 'text-black font semibold font-Inter text-2xl border-b border-black'>{armor.price}</h2>
-    <h2 className = 'text-black font semibold font-Inter text-2xl border-b border-black'>{armor.description}</h2>
+    <h2 className = 'text-black font semibold font-Inter text-2xl border-b border-black'>{weapon.name}</h2>
+    <h2 className = 'text-black font semibold font-Inter text-2xl border-b border-black'>{weapon.power}</h2>
+    <h2 className = 'text-black font semibold font-Inter text-2xl border-b border-black'>{weapon.price}</h2>
+    <h2 className = 'text-black font semibold font-Inter text-2xl border-b border-black'>{weapon.description}</h2>
 </div>
 <Link to="/" className = 'text-blue-400 font semibold font-Inter text-2xl ml-12'>Back to Home</Link>
 </div>
