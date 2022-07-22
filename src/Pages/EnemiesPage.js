@@ -25,7 +25,7 @@ function EnemiesPage() {
     }, [])
 
     function Delete(id){
-        axios.delete(`http://localhost:8082/enemies/${id}`)
+        axios.delete(`http://localhost:8082/enemies/delete/${id}`)
             .then(res => {
                 loadEnemies();
             }

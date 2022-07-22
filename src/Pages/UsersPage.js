@@ -25,7 +25,7 @@ function UsersPage() {
     }, [])
 
     function Delete(id){
-        axios.delete(`http://localhost:8082/users/${id}`)
+        axios.delete(`http://localhost:8082/users/delete/${id}`)
             .then(res => {
                 loadUsers();
             }

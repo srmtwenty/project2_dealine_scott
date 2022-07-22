@@ -25,7 +25,7 @@ function ItemsPage() {
     }, [])
 
     function Delete(id){
-        axios.delete(`http://localhost:8082/items/${id}`)
+        axios.delete(`http://localhost:8082/items/delete/${id}`)
             .then(res => {
                 loadItems();
             }

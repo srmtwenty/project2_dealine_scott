@@ -25,7 +25,7 @@ function WeaponsPage() {
     }, [])
 
     function Delete(id){
-        axios.delete(`http://localhost:8082/weapons/${id}`)
+        axios.delete(`http://localhost:8082/weapons/delete/${id}`)
             .then(res => {
                 loadWeapons();
             }

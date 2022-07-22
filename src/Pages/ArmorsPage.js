@@ -25,7 +25,7 @@ function ArmorsPage() {
     }, [])
 
     function Delete(id){
-        axios.delete(`http://localhost:8082/armors/${id}`)
+        axios.delete(`http://localhost:8082/armors/delete/${id}`)
             .then(res => {
                 loadArmors();
             }
@@ -35,8 +35,6 @@ function ArmorsPage() {
             }
             )
     }
-
-
 
 
     return (
